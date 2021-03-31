@@ -1,22 +1,25 @@
-<table matSort (matSortChange)="sortData($event)">
-  <tr>
-    <th mat-sort-header="id">Id</th>
-    <th mat-sort-header="titulo">Título</th>
-    <th mat-sort-header="autor">Autor</th>
-    <th mat-sort-header="edicao">Edicao</th>
+<div class="container">
+  <h1>Lista de Livros</h1>
+  <hr />
+  <table matSort (matSortChange)="sortData($event)">
+    <tr>
+      <th mat-sort-header="id">Id</th>
+      <th mat-sort-header="titulo">Título</th>
+      <th mat-sort-header="autor">Autor</th>
+      <th mat-sort-header="edicao">Edicao</th>
+    </tr>
 
-  </tr>
+    <tr *ngFor="let livro of sortedData">
+      <td>{{livro.id}}</td>
+      <td>{{livro.titulo}}</td>
+      <td>{{livro.autor}}</td>
+      <td>{{livro.edicao}}</td>
+    </tr>
+  </table>
 
-  <tr *ngFor="let livro of sortedData">
-    <td>{{livro.id}}</td>
-    <td>{{livro.titulo}}</td>
-    <td>{{livro.autor}}</td>
-    <td>{{livro.edicao}}</td>
-
-  </tr>
-</table>
-
-
-<!-- Copyright 2020 Google LLC. All Rights Reserved.
+  <div class="container">
+    <!-- Copyright 2020 Google LLC. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that
     can be found in the LICENSE file at http://angular.io/license -->
+  </div>
+</div>
